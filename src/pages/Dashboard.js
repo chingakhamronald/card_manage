@@ -1,8 +1,12 @@
 import { Box } from "@mui/material";
-import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-  return <Box>Dashboard</Box>;
+  return (
+    <>
+      <Box>Dashboard</Box>
+      <Outlet />
+    </>
+  );
 };
-
 export default Dashboard;

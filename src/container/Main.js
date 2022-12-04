@@ -1,8 +1,8 @@
 import React from "react";
-import { Routes } from "../router";
+import Drawer from "../components/index";
 
 const Main = () => {
-  return <Routes />;
+  return <Drawer />;
 };
 
 export default Main;
