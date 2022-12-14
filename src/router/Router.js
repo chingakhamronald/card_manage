@@ -1,9 +1,9 @@
-import Dashboard from "../pages/Dashboard";
 import Transaction from "../pages/Transaction";
+import Drawer from "../components/index";
 
 const MainRoutes = {
   path: "/",
-  element: <Dashboard />,
+  element: <Drawer />,
   children: [
     {
       path: "transaction",

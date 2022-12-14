@@ -13,9 +13,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useUiState } from "../store/ui.state";
+import { useNavigate } from "react-router-dom";
 
 export const SideDrawer = () => {
   const ui = useUiState();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -27,7 +29,7 @@ export const SideDrawer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItemButton href="transaction">
+          <ListItemButton onClick={() => navigate("/transaction")}>
             <ListItemIcon>
               <Tooltip title="Transaction" placement="right">
                 <IconButton>
