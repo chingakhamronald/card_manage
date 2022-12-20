@@ -42,14 +42,6 @@ export const TopBar = () => {
             </Typography>
           </Link>
         </Box>
-
-        <Box sx={{ flexGrow: 1 }} />
-
-        <Box>
-          <Typography variant="h6" noWrap color="white">
-            <Avatar>H</Avatar>
-          </Typography>
-        </Box>
       </Toolbar>
     </AppBar>
   );

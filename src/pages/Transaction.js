@@ -10,7 +10,8 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { transaction } from "../api/transaction";
 
 const Transaction = () => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -44,10 +45,19 @@ const Transaction = () => {
     createData("Gingerbread", 356, 16.0, 49, 3.9),
   ];
 
+  // const postTransaction = async () => {
+  //   console.log("check1");
+  //   await transaction().then((res) => console.log(res));
+  // };
+
+  useEffect(() => {
+    transaction();
+  }, []);
+
   return (
-    <Box>
+    <Box sx={{ flexGrow: 1 }}>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="transaction table">
+        <Table aria-label="transaction table">
           <TableHead>
             <TableRow>
               <StyledTableCell align="center">
