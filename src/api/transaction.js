@@ -1,8 +1,5 @@
 import axios from "axios";
-
-const BASE_URL = process.env.REACT_APP_API;
-
-// console.log({ BASE_URL });
+import { BASE_URL } from "../helper/constant";
 
 const axiosHeaderConfig = () => ({
   headers: {

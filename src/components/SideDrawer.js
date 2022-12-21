@@ -14,6 +14,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useUiState } from "../store/ui.state";
 import { useNavigate } from "react-router-dom";
+import PaidIcon from "@mui/icons-material/Paid";
 
 export const SideDrawer = () => {
   const ui = useUiState();
@@ -33,7 +34,7 @@ export const SideDrawer = () => {
             <ListItemIcon>
               <Tooltip title="Transaction" placement="right">
                 <IconButton>
-                  <Icon>D</Icon>
+                  <PaidIcon />
                 </IconButton>
               </Tooltip>
             </ListItemIcon>
