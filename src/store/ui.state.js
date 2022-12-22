@@ -1,7 +1,7 @@
 import create from "zustand";
 
 export const useUiState = create((set) => ({
-  drawerWidth: 184,
+  drawerWidth: 172,
   drawerOpen: true,
 
   setDrawerOpen: (open) => set({ drawerOpen: open }),

@@ -15,7 +15,12 @@ export const TopBar = () => {
   const ui = useUiState();
 
   return (
-    <AppBar position="sticky" open={ui.drawerOpen} width={ui.drawerWidth}>
+    <AppBar
+      position="sticky"
+      open={ui.drawerOpen}
+      width={ui.drawerWidth}
+      sx={{ display: "flex", flexGrow: 1 }}
+    >
       <Toolbar>
         <IconButton
           color="inherit"

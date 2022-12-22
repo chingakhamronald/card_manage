@@ -8,10 +8,12 @@ const axiosHeaderConfig = () => ({
   },
 });
 
-export async function transaction() {
+export async function transaction(pageSize, page) {
   let axiosconf = axiosHeaderConfig();
 
+  console.log({ pageSize: pageSize, page: page });
+
   return await axios
-    .post(BASE_URL + `orders?pageSize=10&pageNo=100`, axiosconf)
-    .then((res) => console.log({ res }));
+    .post(BASE_URL + `orders?pageSize=${pageSize}&pageNo=${page}`, axiosconf)
+    .then((res) => res);
 }
