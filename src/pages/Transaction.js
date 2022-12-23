@@ -44,11 +44,13 @@ const Transaction = () => {
         rowCount={Number(pageState.total)}
         loading={pageState.isLoading}
         disableColumnMenu={true}
-        page={pageState.page}
+        page={pageState.page - 1}
         pagination
         paginationMode="server"
         pageSize={pageState.pageSize}
-        onPageChange={(e) => setPageState((o) => ({ ...o, page: e }))}
+        onPageChange={(e) => {
+          setPageState((o) => ({ ...o, page: e + 1 }));
+        }}
         onPageSizeChange={(e) => setPageState((o) => ({ ...o, pageSize: e }))}
         rowsPerPageOptions={[10, 20, 30]}
         columns={columns}
