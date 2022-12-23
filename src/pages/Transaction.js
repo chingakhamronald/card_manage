@@ -10,7 +10,7 @@ const Transaction = () => {
     isLoading: false,
     data: [],
     pageSize: 10,
-    total: 0,
+    total: "0",
     page: 1,
   });
 
@@ -19,7 +19,12 @@ const Transaction = () => {
   const postTransaction = async () => {
     setPageState((e) => ({ ...e, isLoading: true }));
     await transaction(pageState.pageSize, pageState.page).then((res) => {
-      setPageState((e) => ({ ...e, isLoading: false, data: res?.data }));
+      setPageState((e) => ({
+        ...e,
+        isLoading: false,
+        data: res?.data?.payments,
+        total: res?.data?.totalPayments,
+      }));
     });
   };
 
@@ -36,7 +41,7 @@ const Transaction = () => {
       <DataGrid
         autoHeight
         rows={pageState.data}
-        rowCount={pageState.total}
+        rowCount={Number(pageState.total)}
         loading={pageState.isLoading}
         disableColumnMenu={true}
         page={pageState.page}
