@@ -5,7 +5,7 @@ import { useUiState } from "../store/ui.state";
 import { transaction } from "../api/transaction";
 import moment from "moment";
 
-const Transaction = () => {
+export default function Transaction() {
   const [pageState, setPageState] = useState({
     isLoading: false,
     data: [],
@@ -57,9 +57,7 @@ const Transaction = () => {
       />
     </Box>
   );
-};
-
-export default Transaction;
+}
 
 const columns = [
   {
