@@ -1,19 +1,15 @@
 import Transaction from "../pages/Transaction";
 import Drawer from "../components/index";
-import Monthly from "../pages/Monthly";
+import Mswipe from "../pages/Mswipe";
 
 const MainRoutes = {
   path: "/",
   element: <Drawer />,
   children: [
     {
-      path: "transaction",
-      element: <Transaction />,
+      path: "mswipe",
+      element: <Mswipe />,
     },
-    {
-      path: "monthly",
-      element: <Monthly/>
-    }
   ],
 };
 

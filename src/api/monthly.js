@@ -8,10 +8,10 @@ const axiosHeaderConfig = () => ({
   },
 });
 
-export async function monthly() {
+export async function monthly(pageSize, pageNo) {
   let axiosconf = axiosHeaderConfig();
 
   return await axios
-    .post(BASE_URL + "monthly?pageSize=10&pageNo=1", axiosconf)
-    .then((res) => console.log({ res }));
+    .post(BASE_URL + `monthly?pageSize=${pageSize}&pageNo=${pageNo}`, axiosconf)
+    .then((res) => res);
 }
