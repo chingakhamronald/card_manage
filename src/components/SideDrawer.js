@@ -3,7 +3,6 @@ import {
   Box,
   Divider,
   Drawer as MuiDrawer,
-  Icon,
   IconButton,
   List,
   ListItemButton,
@@ -15,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useUiState } from "../store/ui.state";
 import { useNavigate } from "react-router-dom";
 import PaidIcon from "@mui/icons-material/Paid";
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 export const SideDrawer = () => {
   const ui = useUiState();
@@ -39,6 +39,16 @@ export const SideDrawer = () => {
               </Tooltip>
             </ListItemIcon>
             <ListItemText primary="Transaction" />
+          </ListItemButton>
+              <ListItemButton onClick={() => navigate("/monthly")}>
+            <ListItemIcon>
+              <Tooltip title="Monthly" placement="right">
+                <IconButton>
+                  <DateRangeIcon />
+                </IconButton>
+              </Tooltip>
+            </ListItemIcon>
+            <ListItemText primary="Monthly" />
           </ListItemButton>
         </List>
       </Drawer>

@@ -14,6 +14,7 @@ export default function Transaction() {
     page: 1,
   });
 
+
   const ui = useUiState();
 
   const postTransaction = async () => {
@@ -40,7 +41,7 @@ export default function Transaction() {
     >
       <DataGrid
         autoHeight
-        rows={pageState.data}
+        rows={pageState?.data}
         rowCount={Number(pageState.total)}
         loading={pageState.isLoading}
         disableColumnMenu={true}
