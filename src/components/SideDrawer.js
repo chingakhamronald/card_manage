@@ -30,7 +30,7 @@ export const SideDrawer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItemButton>
+          {/* <ListItemButton>
             <ListItemIcon>
               <Tooltip title="Transaction" placement="right">
                 <IconButton>
@@ -39,7 +39,7 @@ export const SideDrawer = () => {
               </Tooltip>
             </ListItemIcon>
             <ListItemText primary="Transaction" />
-          </ListItemButton>
+          </ListItemButton> */}
           <ListItemButton onClick={() => navigate("/mswipe")}>
             <ListItemIcon>
               <Tooltip title="Mswipe" placement="right">
@@ -48,7 +48,7 @@ export const SideDrawer = () => {
                 </IconButton>
               </Tooltip>
             </ListItemIcon>
-            <ListItemText primary="Mswipe" />
+            <ListItemText primary="Mswipe Record" />
           </ListItemButton>
         </List>
       </Drawer>

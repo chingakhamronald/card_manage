@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { monthly } from "../api/monthly";
 import { useUiState } from "../store/ui.state";
@@ -33,7 +34,7 @@ export default function Mswipe() {
   return (
     <Box
       sx={{
-        marginLeft: ui.drawerOpen ? 21 : 8,
+        marginLeft: ui.drawerOpen ? 24 : 8,
       }}
     >
       <DataGrid
@@ -101,7 +102,7 @@ const columns = [
   {
     field: "bookingInfo",
     headerName: "Customer Name",
-    width: 300,
+    width: 350,
     valueFormatter: (params) => {
       return params?.value?.customerName ?? "N/A";
     },
@@ -130,6 +131,40 @@ const columns = [
       return params?.row?.bookingInfo?.pnr ?? "N/A";
     },
   },
+  {
+    field: "crew",
+    headerName: "Crew Name",
+    width: 300,
+    valueFormatter: (params) => {
+      return params?.value?.employeeName ?? "N/A";
+    },
+  },
+  {
+    field: "_4",
+    headerName: "Crew Id",
+    width: 300,
+    renderCell: (params) => {
+      return params?.row?.crew?.employeeId ?? "N/A";
+    },
+  },
+  {
+    field: "_5",
+    headerName: "Crew Code",
+    width: 300,
+    renderCell: (params) => {
+      return params?.row?.crew?.employeeCode ?? "N/A";
+    },
+  },
+
+  {
+    field: "sessionId",
+    headerName: "Session Id",
+    width: 300,
+    valueFormatter: (e) => {
+      return e.value ?? "N/A";
+    },
+  },
+
   {
     field: "flightNumber",
     headerName: "Flight Number",
