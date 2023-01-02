@@ -1,6 +1,5 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { monthly } from "../api/monthly";
 import { useUiState } from "../store/ui.state";
@@ -133,31 +132,95 @@ const columns = [
   },
   {
     field: "crew",
-    headerName: "Crew Name",
+    headerName: "Crew 1",
     width: 300,
-    valueFormatter: (params) => {
-      return params?.value?.employeeName ?? "N/A";
+    renderCell: (params) => {
+      const data = params.value;
+
+      return (
+        <Box>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Name:- {data[0]?.employeeName ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Position:- {data[0]?.position ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Code:- {data[0]?.employeeCode ?? "N/A"}{" "}
+          </Typography>
+        </Box>
+      );
     },
   },
   {
     field: "_4",
-    headerName: "Crew Id",
+    headerName: "Crew 2",
     width: 300,
     renderCell: (params) => {
-      return params?.row?.crew?.employeeId ?? "N/A";
+      const data = params?.row?.crew;
+
+      return (
+        <Box>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Name:- {data[1]?.employeeName ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Position:- {data[1]?.position ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Code:- {data[1]?.employeeCode ?? "N/A"}{" "}
+          </Typography>
+        </Box>
+      );
     },
   },
   {
     field: "_5",
-    headerName: "Crew Code",
+    headerName: "Crew 3",
     width: 300,
     renderCell: (params) => {
-      return params?.row?.crew?.employeeCode ?? "N/A";
+      const data = params?.row?.crew;
+
+      return (
+        <Box>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Name:- {data[2]?.employeeName ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Position:- {data[2]?.position ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Code:- {data[2]?.employeeCode ?? "N/A"}{" "}
+          </Typography>
+        </Box>
+      );
+    },
+  },
+  {
+    field: "_6",
+    headerName: "Crew 4",
+    width: 300,
+    renderCell: (params) => {
+      const data = params?.row?.crew;
+
+      return (
+        <Box>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Name:- {data[3]?.employeeName ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Position:- {data[3]?.position ?? "N/A"}{" "}
+          </Typography>
+          <Typography sx={{ fontSize: "10px" }}>
+            Crew Code:- {data[3]?.employeeCode ?? "N/A"}{" "}
+          </Typography>
+        </Box>
+      );
     },
   },
 
   {
-    field: "sessionId",
+    field: "sessionid",
     headerName: "Session Id",
     width: 300,
     valueFormatter: (e) => {
