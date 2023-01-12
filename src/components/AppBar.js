@@ -5,7 +5,6 @@ import {
   Toolbar,
   Typography,
   Box,
-  Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useUiState } from "../store/ui.state";

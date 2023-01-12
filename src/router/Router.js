@@ -1,14 +1,13 @@
-import Transaction from "../pages/Transaction";
 import Drawer from "../components/index";
-import Mswipe from "../pages/Mswipe";
+import Crew from "../pages/Crew";
 
 const MainRoutes = {
   path: "/",
   element: <Drawer />,
   children: [
     {
-      path: "mswipe",
-      element: <Mswipe />,
+      path: "crew",
+      element: <Crew />,
     },
   ],
 };

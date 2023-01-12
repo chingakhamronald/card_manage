@@ -13,7 +13,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useUiState } from "../store/ui.state";
 import { useNavigate } from "react-router-dom";
-import PaidIcon from "@mui/icons-material/Paid";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 
 export const SideDrawer = () => {
@@ -30,25 +29,15 @@ export const SideDrawer = () => {
         </DrawerHeader>
         <Divider />
         <List>
-          {/* <ListItemButton>
+          <ListItemButton onClick={() => navigate("/crew")}>
             <ListItemIcon>
-              <Tooltip title="Transaction" placement="right">
-                <IconButton>
-                  <PaidIcon />
-                </IconButton>
-              </Tooltip>
-            </ListItemIcon>
-            <ListItemText primary="Transaction" />
-          </ListItemButton> */}
-          <ListItemButton onClick={() => navigate("/mswipe")}>
-            <ListItemIcon>
-              <Tooltip title="Mswipe" placement="right">
+              <Tooltip title="Crew" placement="right">
                 <IconButton>
                   <DateRangeIcon />
                 </IconButton>
               </Tooltip>
             </ListItemIcon>
-            <ListItemText primary="Mswipe Record" />
+            <ListItemText primary="Crew Frequency" />
           </ListItemButton>
         </List>
       </Drawer>
